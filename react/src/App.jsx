@@ -1,20 +1,38 @@
-import './App.css';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+import './App.css';
+import Navigation from './components/Navigation';
 import HomePage from './pages/HomePage';
-import AddMoviePage from './pages/AddMoviePage';
-import EditMoviePage from './pages/EditMoviePage';
+import CreateExercisePage from './pages/CreateExercisePage';
+import EditExercisePage from './pages/EditExercisePage';
 
 function App() {
+  const [exerciseToEdit, setExerciseToEdit] = useState({});
 
   return (
     <div className="app">
-        <Router>
-          <Routes>
-            <Route path="/" element={<HomePage/>}></Route>
-            <Route path="/add-movie" element={ <AddMoviePage />}></Route>
-            <Route path="/edit-movie" element={ <EditMoviePage />}></Route>
-          </Routes>
-        </Router>
+      <Router>
+
+        <header>
+          <h1>Kramer's Exercises</h1>
+          <p>My log of workouts.</p>
+
+          <Navigation />
+        </header>
+
+        <main>
+            <Routes>
+              <Route path="/" element={<HomePage setExerciseToEdit={setExerciseToEdit} />}></Route>
+              <Route path="/create-exercise" element={ <CreateExercisePage />}></Route>
+              <Route path="/edit-exercise" element={ <EditExercisePage exerciseToEdit={exerciseToEdit} />}></Route>
+            </Routes>
+        </main>
+        
+        <footer>
+          &copy; 2025 Kramer Campbell
+        </footer>
+      </Router>
     </div>
   );
 }

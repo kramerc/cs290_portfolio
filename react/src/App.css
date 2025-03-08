@@ -1,29 +1,96 @@
+body {
+  background-color: #ffd88f;
+  color: #ff4f4f;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin: 2rem;
+  padding: 2rem;
+}
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
-  background-color: #282c34;
 }
 
-.app {
-  background-color: #282c34;
-  color: white;
+#root, .app {
+  background-color: #eee6d7;
+  border-radius: 1rem;
 }
 
-
-.collection-container {
-  border: 6px solid rgb(0, 255, 136);
-  padding: 32px;
+nav ul {
+  list-style: none;
+  padding: 0;
 }
 
-.collection-item {
-  border: 2px solid rgb(202, 200, 89);
-  border-radius: 8px;
-  width: 600px;
-  margin-top: 16px;
+nav ul li {
+  display: inline-block;
+  margin-right: 1rem;
+}
+
+table {
+  border: 2px solid #ffb300;
+  margin: 0 auto;
+}
+
+tr th,
+tr td {
+  border: 2px solid #cac859;
+  padding: 4px;
+}
+
+tr th {
+  background-color: #f5f4b2;
+}
+
+tr td {
+  background-color: #eeeeee;
+}
+
+form {
+  margin: 0 auto;
+  max-width: 320px;
+}
+
+.fields {
+  display: table;
+  margin: 1rem auto;
+}
+
+.fields label {
+  display: table-row;
+}
+
+.fields label span {
+  display: table-cell;
+  padding-right: 0.5rem;
+  text-align: left;
+}
+
+input,
+select,
+button {
+  font-family: 'Courier New', Courier, monospace;
+}
+
+select {
+  display: inline-block;
+  width: 100%;
+}
+
+button {
+  font-size: large;
 }
 
 a {
-  color: white;
+  color: #ff7104;
+}
+
+a:hover {
+  color: red;
+}
+
+footer {
+  font-size: smaller;
+  margin-top: 1rem;
 }
