@@ -14,8 +14,8 @@ function App() {
         <div className="app">
             <Router>
                 <header>
-                    <h1>Kramer's Exercises</h1>
-                    <p>My log of workouts.</p>
+                    <h1>Exercise Log</h1>
+                    <p>Keep track of your workouts.</p>
 
                     <Navigation />
                 </header>
