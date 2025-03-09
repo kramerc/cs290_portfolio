@@ -1,7 +1,7 @@
 body {
   background-color: #ffd88f;
   color: #ff4f4f;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: Verdana;
   margin: 2rem;
   padding: 2rem;
 }
@@ -70,7 +70,7 @@ form {
 input,
 select,
 button {
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Courier New';
 }
 
 select {
