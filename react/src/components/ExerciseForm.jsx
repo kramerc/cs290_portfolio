@@ -19,27 +19,27 @@ function ExerciseForm(props) {
                 <div className="fields">
                     <label>
                         <span>Name:</span>
-                        <input 
-                            type="text" 
-                            value={name} 
+                        <input
+                            type="text"
+                            value={name}
                             required
                             onChange={event => setName(event.target.value)} />
                     </label>
                     <label>
                         <span>Reps:</span>
-                        <input 
+                        <input
                             type="number"
-                            value={reps} 
-                            min={1} 
+                            value={reps}
+                            min={1}
                             required
                             onChange={event => setReps(Number(event.target.value))} />
                     </label>
                     <label>
                         <span>Weight:</span>
-                        <input 
-                            type="number" 
-                            value={weight} 
-                            min={1} 
+                        <input
+                            type="number"
+                            value={weight}
+                            min={1}
                             required
                             onChange={event => setWeight(Number(event.target.value))} />
                     </label>
@@ -52,10 +52,10 @@ function ExerciseForm(props) {
                     </label>
                     <label>
                         <span>Date:</span>
-                        <input 
-                            type="text" 
-                            value={date} 
-                            placeholder="MM-DD-YY" 
+                        <input
+                            type="text"
+                            value={date}
+                            placeholder="MM-DD-YY"
                             required
                             pattern='\d\d-\d\d-\d\d'
                             onChange={event => setDate(event.target.value)} />

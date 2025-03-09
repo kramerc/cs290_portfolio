@@ -1,96 +1,97 @@
 body {
-  background-color: #ffd88f;
-  color: #ff4f4f;
-  font-family: Verdana;
-  margin: 2rem;
-  padding: 2rem;
+    background-color: #ffd88f;
+    color: #ff4f4f;
+    font-family: Verdana;
+    margin: 2rem;
+    padding: 2rem;
 }
 
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
 }
 
-#root, .app {
-  background-color: #eee6d7;
-  border-radius: 1rem;
+#root,
+.app {
+    background-color: #eee6d7;
+    border-radius: 1rem;
 }
 
 nav ul {
-  list-style: none;
-  padding: 0;
+    list-style: none;
+    padding: 0;
 }
 
 nav ul li {
-  display: inline-block;
-  margin-right: 1rem;
+    display: inline-block;
+    margin-right: 1rem;
 }
 
 table {
-  border: 2px solid #ffb300;
-  margin: 0 auto;
+    border: 2px solid #ffb300;
+    margin: 0 auto;
 }
 
 tr th,
 tr td {
-  border: 2px solid #cac859;
-  padding: 4px;
+    border: 2px solid #cac859;
+    padding: 4px;
 }
 
 tr th {
-  background-color: #f5f4b2;
+    background-color: #f5f4b2;
 }
 
 tr td {
-  background-color: #eeeeee;
+    background-color: #eeeeee;
 }
 
 form {
-  margin: 0 auto;
-  max-width: 320px;
+    margin: 0 auto;
+    max-width: 320px;
 }
 
 .fields {
-  display: table;
-  margin: 1rem auto;
+    display: table;
+    margin: 1rem auto;
 }
 
 .fields label {
-  display: table-row;
+    display: table-row;
 }
 
 .fields label span {
-  display: table-cell;
-  padding-right: 0.5rem;
-  text-align: left;
+    display: table-cell;
+    padding-right: 0.5rem;
+    text-align: left;
 }
 
 input,
 select,
 button {
-  font-family: 'Courier New';
+    font-family: 'Courier New';
 }
 
 select {
-  display: inline-block;
-  width: 100%;
+    display: inline-block;
+    width: 100%;
 }
 
 button {
-  font-size: large;
+    font-size: large;
 }
 
 a {
-  color: #ff7104;
+    color: #ff7104;
 }
 
 a:hover {
-  color: red;
+    color: red;
 }
 
 footer {
-  font-size: smaller;
-  margin-top: 1rem;
+    font-size: smaller;
+    margin-top: 1rem;
 }

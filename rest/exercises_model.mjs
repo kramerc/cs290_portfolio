@@ -7,13 +7,13 @@ let connection = undefined;
  * This function connects to the MongoDB server.
  */
 async function connect() {
-    try{
+    try {
         await mongoose.connect(process.env.MONGODB_CONNECT_STRING);
         connection = mongoose.connection;
         console.log("Successfully connected to MongoDB using Mongoose!");
-    } catch(err){
+    } catch (err) {
         console.log(err);
-        throw Error(`Could not connect to MongoDB ${err.message}`)
+        throw Error(`Could not connect to MongoDB ${err.message}`);
     }
 }
 

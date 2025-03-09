@@ -8,33 +8,32 @@ import CreateExercisePage from './pages/CreateExercisePage';
 import EditExercisePage from './pages/EditExercisePage';
 
 function App() {
-  const [exerciseToEdit, setExerciseToEdit] = useState({});
+    const [exerciseToEdit, setExerciseToEdit] = useState({});
 
-  return (
-    <div className="app">
-      <Router>
+    return (
+        <div className="app">
+            <Router>
+                <header>
+                    <h1>Kramer's Exercises</h1>
+                    <p>My log of workouts.</p>
 
-        <header>
-          <h1>Kramer's Exercises</h1>
-          <p>My log of workouts.</p>
+                    <Navigation />
+                </header>
 
-          <Navigation />
-        </header>
+                <main>
+                    <Routes>
+                        <Route path="/" element={<HomePage setExerciseToEdit={setExerciseToEdit} />} />
+                        <Route path="/create-exercise" element={<CreateExercisePage />} />
+                        <Route path="/edit-exercise" element={<EditExercisePage exerciseToEdit={exerciseToEdit} />} />
+                    </Routes>
+                </main>
 
-        <main>
-            <Routes>
-              <Route path="/" element={<HomePage setExerciseToEdit={setExerciseToEdit} />}></Route>
-              <Route path="/create-exercise" element={ <CreateExercisePage />}></Route>
-              <Route path="/edit-exercise" element={ <EditExercisePage exerciseToEdit={exerciseToEdit} />}></Route>
-            </Routes>
-        </main>
-        
-        <footer>
-          &copy; 2025 Kramer Campbell
-        </footer>
-      </Router>
-    </div>
-  );
+                <footer>
+                    &copy; 2025 Kramer Campbell
+                </footer>
+            </Router>
+        </div>
+    );
 }
 
 export default App;
