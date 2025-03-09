@@ -42,10 +42,12 @@ tr td {
 
 tr th {
     background-color: #f5f4b2;
+    color: #775e02;
 }
 
 tr td {
     background-color: #eeeeee;
+    color: #2f6d1a;
 }
 
 form {
