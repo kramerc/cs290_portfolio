@@ -17,25 +17,19 @@ function notFound(res) {
     res.status(404).send({"Error": "Not found"});
 }
 
-/**
- * Takes in a raw set of parameters, such as req.query or req.body, looks for
- * parameters of an exercise, validates, and returns them.
- * 
- * @param {object} params A object of raw parameters.
- * @returns {object} Parameters of an exercise.
- * @throws {TypeError} If parameters are invalid.
- */
-function exerciseParams({ name, reps, weight, unit, date }) {
-    const params = { name, reps, weight, unit, date };
-    if (!validators.isExerciseValid(params)) {
-        throw TypeError("Exercise parameters are not valid");
-    }
+function validateRequestBody(req, res, next) {
+    const permitted = ['name', 'reps', 'weight', 'unit', 'date'];
+    const paramsValid = Object.keys(req.body).every(param => permitted.includes(param));
 
-    return params;
+    if (paramsValid && validators.isExerciseValid(req.body)) {
+        next();
+    } else {
+        invalidRequest(res);
+    }
 }
 
-app.post('/exercises', asyncHandler(async (req, res) => {
-    const exercise = await exercises.create(exerciseParams(req.body));
+app.post('/exercises', validateRequestBody, asyncHandler(async (req, res) => {
+    const exercise = await exercises.create(req.body);
     res.status(201).send(exercise);
 }));
 
@@ -53,8 +47,8 @@ app.get('/exercises/:id', asyncHandler(async (req, res) => {
     res.send(exercise);
 }))
 
-app.put('/exercises/:id', asyncHandler(async (req, res) => {
-    const exercise = await exercises.updateById(req.params.id, exerciseParams(req.body));
+app.put('/exercises/:id', validateRequestBody, asyncHandler(async (req, res) => {
+    const exercise = await exercises.updateById(req.params.id, req.body);
     if (!exercise) {
         return notFound(res);
     }
@@ -70,14 +64,6 @@ app.delete('/exercises/:id', asyncHandler(async (req, res) => {
 
     res.status(204).send();
 }));
-
-app.use((err, req, res, next) => {
-    if (err instanceof TypeError) {
-        invalidRequest(res);
-    } else {
-        next(err);
-    }
-});
 
 app.listen(PORT, async () => {
     await exercises.connect(false);
